@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expressions>
+    <expression>.*New USB device found, idVendor.*</expression>
+    <expression>.*CarPlay_Session_Connected.*</expression>
+    <!-- More expressions here -->
+    <not-found>Usb device is not detected, USB team need to check this issue</not-found>
+    <not-found>Carplay session is not connected, carplay team need to check</not-found>
+    <!-- More not-found tags here -->
+</expressions>

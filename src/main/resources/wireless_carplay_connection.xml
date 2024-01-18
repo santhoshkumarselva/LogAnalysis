@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patternGroups>
+    <patternGroup id="btPairing">
+        <pattern id="btPaired">
+            <regex>.*BluetoothBondStateMachine:.*is bonded.*</regex>
+        </pattern>
+        <commentPositive>//BT pairing of IPhone done</commentPositive>
+        <commentNegative>//Issue with BT pairing</commentNegative>
+    </patternGroup>
+    <patternGroup id="iap2Session">
+        <pattern id="deviceDetected">
+            <regex>.*Apple_Wireless_Device_Detected.*</regex>
+        </pattern>
+        <pattern id="startiAP2">
+            <regex>.*JNI requestiAP2Start start.*</regex>
+        </pattern>
+        <pattern id="sessionEstablished">
+            <regex>.*cpBTClient::iAP2ServiceConnected, BTAddr:.*</regex>
+        </pattern>
+        <commentPositive>//IAP2 session established over BT</commentPositive>
+        <commentNegative>//Issue when establishing IAP2 session over BT</commentNegative>
+    </patternGroup>
+</patternGroups>
