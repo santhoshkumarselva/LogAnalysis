@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <expressions>
     <expression>.*New USB device found, idVendor.*</expression>
-    <expression>.*CarPlay_Session_Connected.*</expression>
+    <expression>.*Sent HARMAN_USB_IAP_CONNECT_EVENT capability\[CarPlayCap\].*</expression>
+    <expression>.*\[HarmanUsbHandler\] DCSM Response:.*</expression>
+    <expression>.*Role switch successfull.*</expression>
+    <expression>.*Sent HARMAN_USB_IAP_CONNECT_EVENT capability\[CarPlay\].*</expression>
+    <expression>.*JNI requestiAP2Start start.*</expression>
+    <expression>.*Link start successful!!!.*</expression>
+    <expression>.*JNI requestiAP2Start end.*</expression>
+    <expression>.*Identification Accepted!!!.*</expression>
+    <expression>.*\[Authentication\] :createSignature success.*</expression>
+    <expression>.*Authentication status !!!!!!!!!! 1.*</expression>
+    <expression>.*CiAP2NotificationDevCtrl::deviceUUIDUpdate.*</expression>
+    <expression>.*CiAP2NotificationDevCtrl::deviceLanguageUpdate.*</expression>
+    <expression>.*CiAP2NotificationDevCtrl::deviceNameUpdate:.*</expression>
+    <expression>.*received CMD_CARPLAY_AVAILABILITY from device.*</expression>
+    <expression>.*WiredTransportIdentifier__mHasCarPlay: AVAILABLE.*</expression>
+    <expression>.*setCarPlayAvailability - Sending Event_CPBL_CtrlStartCarPlaySession.*</expression>
+    <expression>.*Reading IPv6 Address for interface.*</expression>
+    <expression>.*startCarPlaySession: sessionInfo\.wired\.ipAddress:.*</expression>
+    <expression>.*Control pair-verify 1.*</expression>
+    <expression>.*Control pair-verify 2.*</expression>
+    <expression>.*\[CarPlay\]\[Session\] CarPlay Session is UP.*</expression>
+    <expression>.*CarPlay : CpHmiManageronSessionStatusEvent status:true.*</expression>
     <!-- More expressions here -->
     <not-found>Usb device is not detected, USB team need to check this issue</not-found>
-    <not-found>Carplay session is not connected, carplay team need to check</not-found>
+    <not-found>HUH didn't send the onDeviceConnected() callback with carplay cap, HUH need to check</not-found>
+    <not-found>DCSM didn't send response after resolve device mode, DCSM team need to check</not-found>
+    <not-found>Role switch is not successful, HUH need to check</not-found>
+    <not-found>Even after role switch, HUH didn't send onDeviceConnected() callback with device mode carplay, HUH need to check</not-found>
+    <not-found>After receiving onDeviceConnected() callback with mode carplay, request IAP2 start is not called, IAP2 GOD Sukhbir need to check</not-found>
+    <not-found>IAP2 link start is not successful, IAP2 GOD Sukhbir need to check</not-found>
+    <not-found>IAP2 session connection is not successful, IAP2 GOD Sukhbir need to check</not-found>
+    <not-found>Identification information is not accepted by phone</not-found>
+    <not-found>Authentication signature is not created successfully</not-found>
+    <not-found>Authentication failed</not-found>
+    <not-found>Didn't receive the device UUID update from phone</not-found>
+    <not-found>Didn't receive the device language update from phone</not-found>
+    <not-found>Didn't receive carplay availability from phone</not-found>
+    <not-found>Wired carplay is not supported</not-found>
+    <not-found>After receiving the carplay availability, carplay stack state machine is not set to start carplay session</not-found>
+    <not-found>Not able to read IP address for usb0 interface</not-found>
+    <not-found>Pair verify 1 didn't happen from phone</not-found>
+    <not-found>Pair verify 2 didn't happen from phone</not-found>
+    <not-found>Carplay session is not established after pair verify</not-found>
+    <not-found>Carplay session status is not received to carplay application layer</not-found>
     <!-- More not-found tags here -->
 </expressions>
