@@ -26,6 +26,7 @@ public class RegularExpressionMatcher {
             NodeList notFoundStrings = doc.getElementsByTagName("not-found");
 
             int previousMatchedLine = -1; // Initialize with -1 to indicate no previous match
+            boolean issueOccured = false;
             for (int i = 0; i < expressions.getLength(); i++) {
                 String pattern = expressions.item(i).getTextContent();
                 String notFoundString = notFoundStrings.item(i).getTextContent();
@@ -45,9 +46,11 @@ public class RegularExpressionMatcher {
 
                 if (!matched) {
                     System.out.println(notFoundString);
+                    issueOccured = true;
                     break; // Stop checking further regular expressions
                 }
             }
+            if(!issueOccured) System.out.println("\nNo issue observed from the logs");
         } catch (Exception e) {
             e.printStackTrace();
         }

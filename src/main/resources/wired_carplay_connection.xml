@@ -30,20 +30,22 @@
     <not-found>Role switch is not successful, HUH need to check</not-found>
     <not-found>Even after role switch, HUH didn't send onDeviceConnected() callback with device mode carplay, HUH need to check</not-found>
     <not-found>After receiving onDeviceConnected() callback with mode carplay, request IAP2 start is not called, IAP2 GOD Sukhbir need to check</not-found>
-    <not-found>IAP2 link start is not successful, IAP2 GOD Sukhbir need to check</not-found>
-    <not-found>IAP2 session connection is not successful, IAP2 GOD Sukhbir need to check</not-found>
-    <not-found>Identification information is not accepted by phone</not-found>
-    <not-found>Authentication signature is not created successfully</not-found>
-    <not-found>Authentication failed</not-found>
-    <not-found>Didn't receive the device UUID update from phone</not-found>
-    <not-found>Didn't receive the device language update from phone</not-found>
-    <not-found>Didn't receive carplay availability from phone</not-found>
-    <not-found>Wired carplay is not supported</not-found>
-    <not-found>After receiving the carplay availability, carplay stack state machine is not set to start carplay session</not-found>
-    <not-found>Not able to read IP address for usb0 interface</not-found>
-    <not-found>Pair verify 1 didn't happen from phone</not-found>
-    <not-found>Pair verify 2 didn't happen from phone</not-found>
-    <not-found>Carplay session is not established after pair verify</not-found>
-    <not-found>Carplay session status is not received to carplay application layer</not-found>
+    <not-found>IAP2 link start is not successful, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>IAP2 session connection is not successful, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>Identification information is not accepted by phone, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>Authentication signature is not created successfully, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>Authentication failed, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>Didn't receive the device UUID update from phone, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>Didn't receive the device language update from phone, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>Didn't receive the device name update from phone, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>Didn't receive carplay availability from phone, "IAP2 GOD Sukhbir" need to check</not-found>
+    <not-found>Wired carplay is not enabled, tester need to re-verify the issue making sure carplay is enabled</not-found>
+    <not-found>After receiving the carplay availability, carplay stack state machine is not set to start carplay session, carplay team need to check</not-found>
+    <not-found>Not able to read IP address for usb0 interface, carplay team need to check</not-found>
+    <not-found>Start carplay session not called after reading IP address, carplay team need to check</not-found>
+    <not-found>Pair verify 1 didn't happen from phone, carplay team need to check</not-found>
+    <not-found>Pair verify 2 didn't happen from phone, carplay team need to check</not-found>
+    <not-found>Carplay session is not established after pair verify, carplay team need to check</not-found>
+    <not-found>Carplay session status is not received to carplay application layer, carplay team need to check</not-found>
     <!-- More not-found tags here -->
 </expressions>
