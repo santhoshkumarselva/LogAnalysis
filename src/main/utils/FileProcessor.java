@@ -1,4 +1,4 @@
-package utils;
+package main.utils;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
@@ -38,7 +38,6 @@ public class FileProcessor {
         StringWriter stringWriter = new StringWriter();
         transformer.transform(new DOMSource(document), new StreamResult(stringWriter));
 
-        String xmlString = stringWriter.getBuffer().toString();
-        return xmlString;
+        return stringWriter.getBuffer().toString();
     }
 }
