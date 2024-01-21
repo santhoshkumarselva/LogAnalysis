@@ -1,4 +1,4 @@
-package main.utils;
+package com.santhosh.loganalysis.utils;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;

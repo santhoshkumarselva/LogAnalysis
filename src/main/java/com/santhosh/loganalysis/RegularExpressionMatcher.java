@@ -1,15 +1,12 @@
-package main.java.com.santhosh.loganalysis;
+package com.santhosh.loganalysis;
 
-import main.utils.FileProcessor;
+import com.santhosh.loganalysis.utils.FileProcessor;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.regex.Matcher;
@@ -44,7 +41,7 @@ public class RegularExpressionMatcher {
             }
 
             if (!matched) {
-                System.out.println(notFoundString);
+                System.out.println("\n"+notFoundString);
                 issueOccured = true;
                 break; // Stop checking further regular expressions
             }
