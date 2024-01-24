@@ -7,13 +7,15 @@ import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegularExpressionMatcher {
-    public static void matchRegularExpressionsWithLines(String[] lines, String xmlContent) throws Exception {
+    public static String matchRegularExpressionsWithLines(String[] lines, String xmlContent) throws Exception {
+        StringBuilder output = new StringBuilder();
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         InputSource src = new InputSource();
         src.setCharacterStream(new StringReader(xmlContent));
@@ -22,7 +24,7 @@ public class RegularExpressionMatcher {
         NodeList notFoundStrings = doc.getElementsByTagName("not-found");
 
         int previousMatchedLine = -1; // Initialize with -1 to indicate no previous match
-        boolean issueOccured = false;
+        boolean issueOccurred = false;
         for (int i = 0; i < expressions.getLength(); i++) {
             String pattern = expressions.item(i).getTextContent();
             String notFoundString = notFoundStrings.item(i).getTextContent();
@@ -34,27 +36,30 @@ public class RegularExpressionMatcher {
                 Matcher m = p.matcher(line);
                 if (m.find()) {
                     matched = true;
-                    System.out.println(line);
+                    output.append(line).append("\n");
                     previousMatchedLine = j; // Update the previous matched line
                     break;
                 }
             }
 
             if (!matched) {
-                System.out.println("\n"+notFoundString);
-                issueOccured = true;
+                output.append("\n").append(notFoundString).append("\n");
+                issueOccurred = true;
                 break; // Stop checking further regular expressions
             }
         }
-        if(!issueOccured) System.out.println("\nNo issue observed from the logs");
+        if (!issueOccurred) {
+            output.append("\nNo issue observed from the logs");
+        }
+        return output.toString();
     }
 
-    public void analyse(String fileName, String useCase) throws IOException {
+    public String analyse(String fileName, File useCase) throws IOException {
         String[] lines = FileProcessor.readLinesFromFile(fileName);
         String xmlString;
         try {
             xmlString = FileProcessor.xmlToString(useCase);
-            matchRegularExpressionsWithLines(lines, xmlString);
+            return matchRegularExpressionsWithLines(lines, xmlString);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

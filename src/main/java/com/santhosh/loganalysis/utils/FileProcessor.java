@@ -18,7 +18,7 @@ public class FileProcessor {
     public static String[] readLinesFromFile(String filePath) throws IOException {
         ArrayList<String> lines = new ArrayList<>();
         ClassLoader classLoader = FileProcessor.class.getClassLoader();
-        BufferedReader reader = new BufferedReader(new FileReader(new File(classLoader.getResource(filePath).getFile())));
+        BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)));
         String line;
         while ((line = reader.readLine()) != null) {
             lines.add(line);
@@ -26,9 +26,9 @@ public class FileProcessor {
         reader.close();
         return lines.toArray(new String[0]);
     }
-    public static String xmlToString(String filePath) throws IOException, SAXException, TransformerException, ParserConfigurationException {
-        ClassLoader classLoader = FileProcessor.class.getClassLoader();
-        File xmlFile = new File(classLoader.getResource(filePath).getFile());
+    public static String xmlToString(File xmlFile) throws IOException, SAXException, TransformerException, ParserConfigurationException {
+        /*ClassLoader classLoader = FileProcessor.class.getClassLoader();
+        File xmlFile = new File(classLoader.getResource(filePath).getFile());*/
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         Document document = documentBuilder.parse(xmlFile);
